@@ -1,0 +1,20 @@
+.random{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.contenedor{
+    width: 10vw;
+    display:flex;
+    flex-direction: column;
+    margin: 0 12px;
+}
+.imagenes:hover{
+    scale:0.9;
+}
+.contenedor > p{
+    font-size:small;
+    margin:2px 0;
+    /* text-transform: Capitalize; */
+}

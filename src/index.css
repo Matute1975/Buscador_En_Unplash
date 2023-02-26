@@ -1,0 +1,11 @@
+/* aca definire mis variables globals, como colores, fuentes, etc.*/
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color:cornsilk;
+}
+input {
+    background-color:cornsilk;
+}
+

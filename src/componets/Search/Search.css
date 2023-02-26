@@ -1,0 +1,47 @@
+.padreSearch{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    margin-top: 20px;
+}
+.contenedorSearch{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.divSearch{
+ 
+    font-size:small;
+    margin:2px 2px 2px 2px;
+    max-width: 250px;
+    height:fit-content;
+    
+}
+.imagenesSearch{
+   max-width: 250px;
+   
+}
+.imagenesSearch:hover{
+    /* scale:0.9; */
+    /* margin-bottom: 8px; */
+}
+.divSearch > p{
+    font-size:small;
+    margin:2px 0;
+    max-width: 250px;
+    
+}
+button{
+    border-radius: 0.5rem;
+    border: none;
+    background-color:rgba(120, 138, 192, 0.726);
+    margin: 1.2px;
+    max-width: 250px;
+    text-align: start;
+    
+}
+button > a{
+    text-decoration: none;
+    color:black
+}
