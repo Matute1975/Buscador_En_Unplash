@@ -22,10 +22,7 @@
    max-width: 250px;
    
 }
-.imagenesSearch:hover{
-    /* scale:0.9; */
-    /* margin-bottom: 8px; */
-}
+
 .divSearch > p{
     font-size:small;
     margin:2px 0;
@@ -39,7 +36,10 @@ button{
     margin: 1.2px;
     max-width: 250px;
     text-align: start;
-    
+}
+.button:hover{
+    scale:1.6;
+
 }
 button > a{
     text-decoration: none;
