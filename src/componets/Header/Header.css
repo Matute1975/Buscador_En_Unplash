@@ -4,7 +4,7 @@ header{
   }
   .buscador{
       position: relative;
-      width: 340px;
+      width: 280px;
       margin-top:30px;
     }
     .input{
@@ -12,7 +12,7 @@ header{
       border-bottom: 1px solid black;
       /* box-shadow: 0 0 15px 4px rgba(0,0,0,0.6); */
       /* border-radius: 15px; */
-      padding: 15px 15px 3px 5px;
+      padding: 15px 5px 3px 5px;
       width: 100%;
       outline: none;
       text-transform: lowercase;
@@ -22,7 +22,7 @@ header{
       position:absolute;
       width: 15px;
       height: 15px;
-      left: 310px;
+      left: 270px;
       top: 50%;
       transform: translateY(-50%);
     }
