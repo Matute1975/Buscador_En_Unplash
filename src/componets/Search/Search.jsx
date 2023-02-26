@@ -32,6 +32,12 @@ const Search = ({buscar}) => {
 
     },[buscar])
 
+    const Click = () => { 
+        console.log('Hizo click en la foto.')
+        
+
+    }
+
     if (buscar !='' && encontrado.total > 0) {       
         return(
             
@@ -43,7 +49,7 @@ const Search = ({buscar}) => {
                 <div className="contenedorSearch">
                   {results.map((elemento)=>
                   <div className="divSearch" key={elemento.id}>
-                    <img className="imagenesSearch" src={elemento.urls.regular} alt={elemento.alt_description}/> 
+                    <a><img className="imagenesSearch" onClick={Click} src={elemento.urls.regular} alt={elemento.alt_description}/></a>
                     <button><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></button>
                     {elemento.user.location && <button>{elemento.user.location}</button>} 
                     <button>{elemento.tags[0].title}</button>

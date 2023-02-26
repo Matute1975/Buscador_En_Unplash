@@ -9,13 +9,18 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content:left;
+    align-items:center;
+    margin-left: 15px;
 }
 .divSearch{
- 
+    display: flex;
+    flex-direction: column;
     font-size:small;
     margin:2px 2px 2px 2px;
-    max-width: 250px;
-    height:fit-content;
+    max-width: 150px;
+    
+    justify-content: space-between;
     
 }
 .imagenesSearch{
@@ -23,10 +28,10 @@
    
 }
 
-.divSearch > p{
+.divSearch > p , a{
     font-size:small;
     margin:2px 0;
-    max-width: 250px;
+    max-width:fit-content;
     
 }
 button{
