@@ -10,7 +10,8 @@ const Search = ({buscar}) => {
     console.log('Esto tiene buscarrrrr en Search:',buscar)
     const [encontrado,setEncontrado]=useState([])
     const [results,setResults]=useState([])
-    const urlSearchFotos=`https://api.unsplash.com/search/photos/?&w=250&max-h=250fit=crop&per_page=30&query=${buscar}&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` //fit=crop&w=300&min-h=300
+    let [count,setCount]=useState(0)
+    const urlSearchFotos=`https://api.unsplash.com/search/photos/?&w=250&max-h=250fit=crop&per_page=30&lang:es&query=${buscar}&orientation=squarish&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` 
 
     
     useEffect(()=>{
@@ -32,12 +33,7 @@ const Search = ({buscar}) => {
 
     },[buscar])
 
-    const Click = () => { 
-        console.log('Hizo click en la foto.')
-        
-
-    }
-
+  
     if (buscar !='' && encontrado.total > 0) {       
         return(
             
@@ -49,13 +45,15 @@ const Search = ({buscar}) => {
                 <div className="contenedorSearch">
                   {results.map((elemento)=>
                   <div className="divSearch" key={elemento.id}>
-                    <a><img className="imagenesSearch" onClick={Click} src={elemento.urls.regular} alt={elemento.alt_description}/></a>
-                    <div className="texto">
+                    <a href={elemento.urls.regular} target="_blank"><img className="imagenesSearch" src={elemento.urls.regular} alt={elemento.alt_description}/></a>
+                    <div className="etiquetas">
                         <button><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></button>
                         {elemento.user.location && <button>{elemento.user.location}</button>} 
                         <button>{elemento.tags[0].title}</button>
-                        <button> {elemento.tags[1].title}</button>
-                        <button> {elemento.tags[2].title}</button>
+                        <button>{elemento.tags[1].title}</button>
+                        <button>{elemento.tags[2].title}</button>
+                        <button>Imagen {count+=1}/{encontrado.total}</button>
+                        <a href={elemento.urls.regular} target='_blank' download><button title='Descargar'><i className="bi bi-download descargar"></i></button></a>
                         {/* {elemento.alt_description && <button>{elemento.alt_description}</button>} */}
                     </div>
                   </div>

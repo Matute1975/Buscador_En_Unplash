@@ -21,16 +21,17 @@
     justify-content: flex-start;
     
     
+    
 }
 .imagenesSearch{
    max-width: 250px;
    
 }
-
 .divSearch > p , a{
     font-size:small;
     margin:2px 0;
     max-width:fit-content;
+    cursor:pointer;
     
 }
 button{
@@ -47,5 +48,10 @@ button{
 }
 button > a{
     text-decoration: none;
-    color:black
+    color:black;
+    cursor:pointer;
+}
+.etiquetas{
+    display: inline-block;
+    
 }
