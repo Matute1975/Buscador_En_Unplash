@@ -50,13 +50,14 @@ const Search = ({buscar}) => {
                   {results.map((elemento)=>
                   <div className="divSearch" key={elemento.id}>
                     <a><img className="imagenesSearch" onClick={Click} src={elemento.urls.regular} alt={elemento.alt_description}/></a>
-                    <button><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></button>
-                    {elemento.user.location && <button>{elemento.user.location}</button>} 
-                    <button>{elemento.tags[0].title}</button>
-                    <button> {elemento.tags[1].title}</button>
-                    <button> {elemento.tags[2].title}</button>
-                    {/* {elemento.alt_description && <button>{elemento.alt_description}</button>} */}
-                  
+                    <div className="texto">
+                        <button><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></button>
+                        {elemento.user.location && <button>{elemento.user.location}</button>} 
+                        <button>{elemento.tags[0].title}</button>
+                        <button> {elemento.tags[1].title}</button>
+                        <button> {elemento.tags[2].title}</button>
+                        {/* {elemento.alt_description && <button>{elemento.alt_description}</button>} */}
+                    </div>
                   </div>
                 
                 )}        
