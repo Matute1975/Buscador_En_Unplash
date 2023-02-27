@@ -4,7 +4,6 @@
     flex-direction: row;
     margin-top: 50px;
     flex-wrap: wrap;
-    gap:20px;
     justify-content: space-around;
 }
 .contenedorRandom{
@@ -35,6 +34,7 @@
 }
 .imagenesRandom{
     max-width: 250px;
+    min-height:90px;
     
  }
 .imagenesRandom:hover{
