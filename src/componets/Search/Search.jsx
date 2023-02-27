@@ -39,14 +39,14 @@ const Search = ({buscar}) => {
             
             <section className="padreSearch">
                 <div>
-                    <h2>Su busqueda <i>{buscar}</i> tiene {encontrado.total} resultados.</h2>
+                    <h2>Su busqueda <i>{buscar}</i> obtuvo {encontrado.total} resultados.</h2>
                 </div>
                 
                 <div className="contenedorSearch">
                   {results.map((elemento)=>
                   <div className="divSearch" key={elemento.id}>
                     <a href={elemento.urls.regular} target="_blank"><img className="imagenesSearch" src={elemento.urls.regular} alt={elemento.alt_description}/></a>
-                    <div className="etiquetas">
+                    <div className="etiquetasSearch">
                         <button><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></button>
                         {elemento.user.location && <button>{elemento.user.location}</button>} 
                         <button>{elemento.tags[0].title}</button>

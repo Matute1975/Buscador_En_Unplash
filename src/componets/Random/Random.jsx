@@ -5,8 +5,8 @@ import './Random.css'
 const Random = () => { 
 
     //const urlBasePhoto=`https://api.unsplash.com/photos/?page=${page}&per_page=30&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` //maserrano
-    //const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=30&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` //maserrano
-    //const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=20&client_id=ghOVJdvH73_snz5IugwQ8FOLFsFmjceRTlo38dH6nqM` //matute1975
+    //const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=30&orientation=squarish&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` //maserrano
+    //const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=30&orientation=landscape&w=250&max-h=250fit=crop&client_id=ghOVJdvH73_snz5IugwQ8FOLFsFmjceRTlo38dH6nqM` //matute1975
 
     const [fotos,setFotos]=useState([])
     const [servidor,setServidor]=useState(-1000)
@@ -27,21 +27,30 @@ const Random = () => {
         obtenerFotos()
     },[]) 
                
+    
     if(servidor===200){
+
         return(
-            <div className="random">
+
+            <section className="padreRandom">
                     {fotos.map((elemento)=> 
-                    <div className="contenedor"
+                    <div className="contenedorRandom"
                         key={elemento.id}>
-                        <img className="imagenes" src={elemento.urls.regular} alt={elemento.alt_description}/> 
-                        {elemento.user.name && <p><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></p>}
-                        {elemento.location.city && <p>{elemento.location.city}</p>}
-                        {elemento.location.country && <p>{elemento.location.country}</p>}
-                        {elemento.exif.name && <p>{elemento.exif.name}</p>}
-                        {elemento.alt_description && <p>{elemento.alt_description}</p>}
+                            <div className="divRandom">
+                                <a href={elemento.urls.regular} target="_blank"><img className="imagenesRandom" src={elemento.urls.regular} alt={elemento.alt_description}/></a>
+                                <div className="etiquetasRandom">
+                                    {elemento.user.name && <button><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></button>}
+                                    {/* {elemento.user.location && <button>{elemento.user.location}</button>}  */}
+                                    {elemento.location.city && <button>{elemento.location.city}</button>}
+                                    {elemento.location.country && <button>{elemento.location.country}</button>}
+                                    {elemento.location.name && <button>{elemento.location.name}</button>}
+                                    {elemento.exif.name && <button>{elemento.exif.name}</button>}
+                                    <a href={elemento.urls.regular} target='_blank' download><button title='Descargar'><i className="bi bi-download descargar"></i></button></a>
+                                </div>  
+                            </div> 
                     </div>
                     )}
-            </div>
+            </section>
         )
     }else{
         if(servidor !=-1000){

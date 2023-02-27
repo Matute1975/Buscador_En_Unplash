@@ -8,4 +8,21 @@ body{
 input {
     background-color:cornsilk;
 }
+button{
+    border-radius: 0.5rem;
+    border: none;
+    background-color:rgba(120, 138, 192, 0.726);
+    color: black;
+    margin: 1.2px;
+    max-width:100%;
+    text-align:left;
+    font-size: small;
+    font-stretch: condensed;
 
+    
+}
+button > a{
+    text-decoration: none;
+    color:black;
+    cursor:pointer;
+}

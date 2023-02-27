@@ -1,20 +1,46 @@
-.random{
+.padreRandom{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     margin-top: 50px;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: space-around;
 }
-.contenedor{
-    width: 10vw;
+.contenedorRandom{
+    /* width: 10vw;
     display:flex;
     flex-direction: column;
-    margin: 0 12px;
+    margin: 0 12px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    margin-left: 5px;
 }
-.imagenes:hover{
-    scale:0.9;
+.divRandom{
+    display: flex;
+    flex-direction: column;
+    font-size:small;
+    margin:0px 2px 10px 2px;
+    max-width: 250px;
+    justify-content: flex-start;    
 }
-.contenedor > p{
+.divRandom > a{
     font-size:small;
     margin:2px 0;
-    /* text-transform: Capitalize; */
+    max-width:fit-content;
+    cursor:pointer;
+    
+}
+.imagenesRandom{
+    max-width: 250px;
+    
+ }
+.imagenesRandom:hover{
+    scale:0.9;
+}
+.etiquetasRandom{
+    display: inline-block;
+    
 }
