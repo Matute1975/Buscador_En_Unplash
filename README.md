@@ -19,5 +19,6 @@ RECOMENDACIÓN:  al disponer solo de 50 consultas por hora en la API Unsplash, a
 
 Para visualizar el proyecto, diríjase al siguiente enlace:
 https://github.com/Matute1975/Buscador_En_Unplash 
+
 Para ejecutar la página diríjase al siguiente enlace:
 https://buscador-en-unplash-4bq6eg1t7-matute1975.vercel.app/#
