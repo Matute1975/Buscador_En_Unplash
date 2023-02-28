@@ -14,11 +14,11 @@ La página dispone de un buscador, en el cual se puede filtrar las imágenes que
 Cuando se realiza una búsqueda las etiquetas que se mostrarán serán, fotógrafo, locación donde se tomó la fotografía, tags de filtrado por categoría, numero visualizado de imagen respecto al total y botón de descarga. De igual manera cada imagen puede ser vista de manera mas visual clicando sobre la misma.
 La página es responsive, pese que no se definieron mediaquerys, gracias al lineamiento seguido en su construcción.
 La aplicación no está completa, faltaría un poco de CSS, configurar scroll infinito (funciona, solo que no anexa las imágenes al final, si no que reemplaza las actuales), y alguna animación.
-RECOMENDACIÓN:  al disponer solo de 50 consultas por hora en la API Unsplash, al hacer scroll y llegar a la última imagen, no permanecer más de 2 segundos con el scroll en dicha posición, esto haría que se disparen constantes peticiones a la API, agotando las 50/h en manera muy rápida.
+
+----RECOMENDACIÓN:----  al disponer solo de 50 consultas por hora en la API Unsplash, al hacer scroll y llegar a la última imagen, no permanecer más de 2 segundos con el scroll en dicha posición, esto haría que se disparen constantes peticiones a la API, agotando las 50/h de manera muy brusca.
 
 Para visualizar el proyecto, diríjase al siguiente enlace:
 https://github.com/Matute1975/Buscador_En_Unplash 
-Para ejecutar la página diríjase al siguiente enlace:
-https://buscador-en-unplash-4bq6eg1t7-matute1975.vercel.app/#
+El enlace directo al deply no se agrega por los cambios que pueda seguir recibiendo el proyecto.
 
-Para ejecutar la página diríjase al siguiente enlace: https://buscador-en-unplash-4bq6eg1t7-matute1975.vercel.app/#
+Matias Serrano.
