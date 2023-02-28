@@ -9,10 +9,13 @@ const Search = ({buscar}) => {
     const [encontrado,setEncontrado]=useState([])
     const [results,setResults]=useState([])
     let [count,setCount]=useState(0)
-    const urlSearchFotos=`https://api.unsplash.com/search/photos/?&w=250&max-h=250fit=crop&per_page=30&lang:es&query=${buscar}&orientation=squarish&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` 
+    
 
     useEffect(()=>{
-        const searchFotos=async () =>{
+     console.log('Esto tiene buscar en Search:',buscar)
+         
+            const urlSearchFotos=`https://api.unsplash.com/search/photos/?&w=250&max-h=250fit=crop&per_page=30&lang:es&query=${buscar}&orientation=squarish&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` 
+            const searchFotos=async () =>{
             const resultado=await axios.get(`${urlSearchFotos}`) 
             console.log(resultado)
             setEncontrado(resultado.data)
@@ -20,6 +23,7 @@ const Search = ({buscar}) => {
             }
         searchFotos()
         //console.log(encontrado)
+        
     },[buscar])
 
     if (buscar !='' && encontrado.total > 0) {       

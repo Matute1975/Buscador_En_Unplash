@@ -9,6 +9,7 @@ const App =()=> {
 
   const [input,setInput]=useState('')
   const [buscar,setBuscar]=useState('')
+  
     
   const capturaBusqueda = () => { 
        //setBusca('')
@@ -20,7 +21,7 @@ const App =()=> {
     <div className="App">
       
       <Header capturaBusqueda={capturaBusqueda} setInput={setInput} input={input}/>
-      <Search buscar={buscar}/>  
+      <Search buscar={buscar} />  
       <Random />
       
     </div>

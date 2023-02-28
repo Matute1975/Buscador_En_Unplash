@@ -5,25 +5,27 @@ import './Random.css'
 
 
 //const urlBasePhoto=`https://api.unsplash.com/photos/?page=${page}&per_page=30&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` //maserrano
-//const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=30&w=250&max-h=250fit=crop&orientation=landscape&w=250&max-h=250fit=crop&client_id=ghOVJdvH73_snz5IugwQ8FOLFsFmjceRTlo38dH6nqM` //matute1975
-const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=30&w=250&max-h=250fit=crop&orientation=landscape&w=250&max-h=250fit=crop&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` //maserrano
+const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=30&w=250&max-h=250fit=crop&orientation=landscape&w=250&max-h=250fit=crop&client_id=ghOVJdvH73_snz5IugwQ8FOLFsFmjceRTlo38dH6nqM` //matute1975
+//const urlBasePhoto=`https://api.unsplash.com/photos/random/?count=30&w=250&max-h=250fit=crop&orientation=landscape&w=250&max-h=250fit=crop&client_id=tH1HMuBk-P-MztRQtyLP_kD7Rak7C6rSJcNAMCCq7wU` //maserrano
 
 const Random = () => { 
     const [fotos,setFotos]=useState([])
     const [servidor,setServidor]=useState(-1000)
     const ultimaFotoRef=useRef(null)
-    const [siguiente,setSiguiente]=useState(0)
+    const [siguiente,setSiguiente]=useState(null)
   
     useEffect(()=>{
-    const obtenerFotos=async () =>{
+      
+      const obtenerFotos=async () =>{
       const response=await axios.get(`${urlBasePhoto}`) 
       console.log(response)
       setServidor(response.status)
       //console.log(response.data)
       setFotos(response.data)
       //.finally(()=>console.log('Finalizo la conexion a la API.'))
-  }
+      }
     obtenerFotos()
+    //console.log('ésto tiene fotos',fotos)
     },[siguiente])
   
   
@@ -41,6 +43,7 @@ const Random = () => {
                 entries.forEach(entries=>{
                     if(entries.isIntersecting){
                         setSiguiente(currentState=>(currentState+1))
+                        console.log('esto tiene currente state en Ramdon',currentState)
                         vigia.unobserve(ultimaFotoRef.current)
                     }
                 })
@@ -72,6 +75,7 @@ const Random = () => {
                                 </div>  
                             </div> 
                     </div>
+                    
                     )}
             </section>
         )
@@ -79,7 +83,7 @@ const Random = () => {
         if(servidor === -1000){
             return(
                     <div>
-                        <h4>Ups! ocurrio un error.</h4>
+                        <h4>Ups! ocurrio un error, codigo de coexion distinto a 200.</h4>
                     </div>
                  )
         }         
