@@ -43,11 +43,14 @@
     color:black;
     cursor:pointer;
 } */
-.button:hover{
-    scale:1.6;
-
-}
 .etiquetasSearch{
     display: inline-block;
+}
+.etiquetasSearch > button:hover{
+    background-color: rgba(47, 79, 79,0.6);
     
 }
+.descargarSearch:hover{
+    scale:1.2;
+    font-weight: bold; 
+    }

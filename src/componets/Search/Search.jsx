@@ -26,6 +26,15 @@ const Search = ({buscar}) => {
         
     },[buscar])
 
+    const descargarImagen = (id, url) => { 
+        console.log('Esto trae desc:',id,', ',url)
+        //GET /photos/:id/download (como se debe ejecutar segun unplash)
+        var origen = `/get /'url:'+id+'/download'`
+        origen.href=origen;
+        origen.download = true;
+      
+    }
+
     if (buscar !='' && encontrado.total > 0) {       
         return(
             <section className="padreSearch">
@@ -35,7 +44,7 @@ const Search = ({buscar}) => {
                 <div className="contenedorSearch">
                   {results.map((elemento)=>
                   <div className="divSearch" key={elemento.id}>
-                    <a href={elemento.urls.regular} target="_blank"><img className="imagenesSearch" src={elemento.urls.regular} alt={elemento.alt_description}/></a>
+                    <a href={elemento.urls.regular} target="_blank"><img className="imagenesSearch" src={elemento.urls.regular} alt={elemento.alt_description} onClick={descargarImagen(elemento.id,elemento.urls.regular)} /></a>
                     <div className="etiquetasSearch">
                         <button><a href={elemento.user.links.html} target="_blank">{elemento.user.name}</a></button>
                         {elemento.user.location && <button>{elemento.user.location}</button>} 
@@ -43,7 +52,7 @@ const Search = ({buscar}) => {
                         <button>{elemento.tags[1].title}</button>
                         <button>{elemento.tags[2].title}</button>
                         <button>Imagen {count+=1}/{encontrado.total}</button>
-                        <a href={elemento.urls.regular} target='_blank' download><button title='Descargar'><i className="bi bi-download descargar"></i></button></a>
+                        <a href={elemento.urls.regular} target='_blank' download><button title='Descargar' className='descargarSearch'><i className="bi bi-download descargar"></i></button></a>
                         {/* {elemento.alt_description && <button>{elemento.alt_description}</button>} */}
                     </div>
                   </div>
@@ -54,7 +63,7 @@ const Search = ({buscar}) => {
     else{
         if(buscar!='' && encontrado.total === 0){
             return(
-                <h2>Lo sentimos, su busqueda <i>{buscar}</i> encontro {encontrado.total} coincidencias.</h2>
+                <h2>Lo sentimos, su busqueda <i>{buscar}</i> obtuvo {encontrado.total} coincidencias.</h2>
             )
         }    
     }          
